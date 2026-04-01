@@ -3,6 +3,8 @@ import { useState } from "react";
 
 //STYLE IMPORTS
 import "./Main.css";
+
+//COMPONENT IMPORTS
 import TaskList from "../TaskList/TaskLisk";
 
 function Main() {
@@ -26,14 +28,16 @@ function Main() {
   return (
     <main>
       <h1>Todo App</h1>
-      <div className="task-input">
+      <div className="task__input">
         <input
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
           placeholder="Add a new task..."
         />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button className="task__input-button" onClick={handleAddTask}>
+          Add Task
+        </button>
       </div>
       <TaskList
         title="My Tasks"

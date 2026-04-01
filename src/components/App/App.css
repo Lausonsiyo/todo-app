@@ -6,4 +6,6 @@
 
 .page__content {
   background-color: blanchedalmond;
+  margin: auto;
+  max-width: 1440px;
 }
