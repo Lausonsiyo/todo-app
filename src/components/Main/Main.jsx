@@ -25,6 +25,15 @@ function Main() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  //FUNCTION TO HANDLE COMPLETE/TOGGLE TASK
+  const handdleToggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  };
+
   return (
     <main>
       <h1>Todo App</h1>
@@ -43,6 +52,7 @@ function Main() {
         title="My Tasks"
         tasks={tasks}
         onDeleteTask={handleDeleteTask}
+        onToggleTask={handdleToggleTask}
       />
     </main>
   );
