@@ -31,3 +31,30 @@ This project focuses on strengthening fundamental React skills:
 ---
 
 ## 🧱 Project Structure
+
+src/
+├── App.jsx
+├── Main/
+│ └── Main.jsx
+├── TaskList/
+│ └── TaskList.jsx
+├── Header/
+├── Footer/
+
+---
+
+## ⚙️ How It Works
+
+### ➕ Add Task
+
+- User types into input
+- Clicks "Add Task"
+- A new task object is created:
+
+```js
+{
+  id: Date.now(),
+  text: task,
+  completed: false
+}
+```
