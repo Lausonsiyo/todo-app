@@ -15,12 +15,8 @@ import TaskList from "../TaskList/TaskLisk";
 
 function Main() {
   //INITIAL STATE FOR TASK INPUT AND TASK LIST
-  const [task, setTask] = useState(() => {
-    const data = getTasksFromLocalStorage();
-    console.log(data);
-    return data;
-  });
-  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState(getTasksFromLocalStorage());
 
   //FUNCTION TO HANDLE ADDING A NEW TASK
   const handleAddTask = () => {
