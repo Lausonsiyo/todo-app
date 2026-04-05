@@ -1,5 +1,11 @@
 //REACT IMPORTS
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+//UTILS IMPORTS
+import {
+  getTasksFromLocalStorage,
+  saveTasksToLocalStorage,
+} from "../../utils/utils.js";
 
 //STYLE IMPORTS
 import "./Main.css";
@@ -9,7 +15,11 @@ import TaskList from "../TaskList/TaskLisk";
 
 function Main() {
   //INITIAL STATE FOR TASK INPUT AND TASK LIST
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState(() => {
+    const data = getTasksFromLocalStorage();
+    console.log(data);
+    return data;
+  });
   const [tasks, setTasks] = useState([]);
 
   //FUNCTION TO HANDLE ADDING A NEW TASK
@@ -33,6 +43,12 @@ function Main() {
       ),
     );
   };
+
+  //USE EFFECT TO SAVE TASKS TO LOCAL STORAGE WHENEVER TASKS STATE CHANGES
+  useEffect(() => {
+    saveTasksToLocalStorage(tasks);
+    console.log(tasks);
+  }, [tasks]);
 
   return (
     <main>
