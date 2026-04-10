@@ -56,7 +56,7 @@ function Main() {
 
   return (
     <main>
-      <h1>Todo App</h1>
+      <h2 className="main__title">Todo App</h2>
       <div className="task__input">
         <input
           type="text"

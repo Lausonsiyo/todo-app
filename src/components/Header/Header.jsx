@@ -4,7 +4,7 @@ import "./Header.css";
 function Header() {
   return (
     <header>
-      <h1>My Todo App</h1>
+      <h1 className="header__title">My Todo App</h1>
     </header>
   );
 }
